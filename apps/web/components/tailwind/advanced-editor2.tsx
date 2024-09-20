@@ -29,7 +29,10 @@ const hljs = require("highlight.js");
 // Add Markdown extension to the editor
 const extensions = [...defaultExtensions, slashCommand, MarkdownExtension];
 
-const TailwindAdvancedEditor = () => {
+interface TailwindAdvancedEditorProps {
+    paramId: string; 
+  }
+  const TailwindAdvancedEditor: React.FC<TailwindAdvancedEditorProps> = ({ paramId }) => {
   const [initialContent, setInitialContent] = useState<null | JSONContent>(null);
   const [saveStatus, setSaveStatus] = useState("Saved");
   const [charsCount, setCharsCount] = useState<number>();
@@ -52,12 +55,12 @@ const TailwindAdvancedEditor = () => {
     const json = editor.getJSON();
     setCharsCount(editor.storage.characterCount.words());
     
-    window.localStorage.setItem("html-content", highlightCodeblocks(editor.getHTML()));
-    window.localStorage.setItem("novel-content", JSON.stringify(json));
+    window.localStorage.setItem(`html-content-${paramId}`, highlightCodeblocks(editor.getHTML()));
+    window.localStorage.setItem(`novel-content-${paramId}`, JSON.stringify(json));
 
     // Only save markdown if available
     if (editor.storage.markdown) {
-      window.localStorage.setItem("markdown", editor.storage.markdown.getMarkdown());
+      window.localStorage.setItem(`markdown-${paramId}`, editor.storage.markdown.getMarkdown());
     }
 
     setSaveStatus("Saved");

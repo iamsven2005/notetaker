@@ -36,39 +36,6 @@
     {
       "group": "Get Started",
       "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Guides",
-      "pages": [
-        "guides/overview",
-        {
-          "group": "Using Tailwind",
-          "pages": [
-            "guides/tailwind/setup",
-            "guides/tailwind/extensions",
-            "guides/tailwind/slash-command",
-            "guides/tailwind/bubble-menu"
-          ]
-        },
-        "guides/ai-command",
-        "guides/image-upload",
-        "guides/global-drag-handle"
-      ]
-    },
-    {
-      "group": "Components",
-      "pages": [
-        "components/editor-root",
-        "components/editor-content",
-        "components/editor-command",
-        "components/editor-command-item",
-        "components/editor-bubble",
-        "components/editor-bubble-item"
-      ]
-    },
-    {
-      "group": "Utils",
-      "pages": ["components/utils/use-editor"]
     }
   ],
   "footerSocials": {

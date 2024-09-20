@@ -1,6 +1,5 @@
 import { EditorBubble, useEditor } from "novel";
-import { removeAIHighlight } from "novel/extensions";
-import {} from "novel/plugins";
+import { removeAIHighlight } from "novel/extensions"; 
 import { Fragment, type ReactNode, useEffect } from "react";
 import { Button } from "../ui/button";
 import Magic from "../ui/icons/magic";
@@ -11,19 +10,22 @@ interface GenerativeMenuSwitchProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
+
 const GenerativeMenuSwitch = ({ children, open, onOpenChange }: GenerativeMenuSwitchProps) => {
   const { editor } = useEditor();
 
   useEffect(() => {
-    if (!open) removeAIHighlight(editor);
+    if (!open) removeAIHighlight(editor); 
   }, [open]);
+
   return (
     <EditorBubble
       tippyOptions={{
         placement: open ? "bottom-start" : "top",
         onHidden: () => {
           onOpenChange(false);
-          editor.chain().unsetHighlight().run();
+          // Make sure the 'highlight' mark is registered before unsetting
+          editor.chain().focus().unsetMark("highlight").run();
         },
       }}
       className="flex w-fit max-w-[90vw] overflow-hidden rounded-md border border-muted bg-background shadow-xl"
