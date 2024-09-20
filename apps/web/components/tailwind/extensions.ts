@@ -124,7 +124,7 @@ const youtube = Youtube.configure({
 
 const characterCount = CharacterCount.configure();
 
-export const defaultExtensions = [
+export const defaultExtensions: any[] = [
   starterKit,
   placeholder,
   tiptapLink,
@@ -139,3 +139,4 @@ export const defaultExtensions = [
   characterCount,
   GlobalDragHandle,
 ];
+
