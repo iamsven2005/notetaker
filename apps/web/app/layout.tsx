@@ -1,13 +1,13 @@
 import "@/styles/globals.css";
 import "@/styles/prosemirror.css";
-
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import Providers from "./providers";
 
-const title = "Novel - Notion-style WYSIWYG editor with AI-powered autocompletions";
+const title = "NoteTaker";
 const description =
-  "Novel is a Notion-style WYSIWYG editor with AI-powered autocompletions. Built with Tiptap, OpenAI, and Vercel AI SDK.";
+  "A super private note taking app";
 
 export const metadata: Metadata = {
   title,
@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>{children}</Providers>
+        <Analytics/>
       </body>
     </html>
   );

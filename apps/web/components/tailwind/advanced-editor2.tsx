@@ -67,7 +67,7 @@ interface TailwindAdvancedEditorProps {
   }, 500);
 
   useEffect(() => {
-    const content = window.localStorage.getItem("novel-content");
+    const content = window.localStorage.getItem(`novel-content-${paramId}`);
     if (content) setInitialContent(JSON.parse(content));
     else setInitialContent(defaultEditorContent);
   }, []);

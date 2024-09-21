@@ -23,6 +23,7 @@ importers:
   apps/web:
     specifiers:
       '@biomejs/biome': ^1.7.2
+      '@prisma/client': ^5.19.1
       '@radix-ui/react-dialog': ^1.0.5
       '@radix-ui/react-popover': ^1.0.6
       '@radix-ui/react-scroll-area': ^1.0.5
@@ -52,6 +53,7 @@ importers:
       next-themes: ^0.2.1
       novel: ^0.5.0
       openai: ^4.27.0
+      prisma: ^5.19.1
       react: 18.2.0
       react-dom: 18.2.0
       react-markdown: ^8.0.7
@@ -65,6 +67,7 @@ importers:
       typescript: ^5.3.3
       use-debounce: ^9.0.3
     dependencies:
+      '@prisma/client': 5.19.1_prisma@5.19.1
       '@radix-ui/react-dialog': 1.1.1_ejr3djo6ehs7jv45sfo7ulhrpu
       '@radix-ui/react-popover': 1.1.1_ejr3djo6ehs7jv45sfo7ulhrpu
       '@radix-ui/react-scroll-area': 1.1.0_ejr3djo6ehs7jv45sfo7ulhrpu
@@ -91,6 +94,7 @@ importers:
       next-themes: 0.2.1_hipqgvz32dfk24avoqah5l7veq
       novel: 0.5.0_3yxv677ahykhu3osjp6qfvrv2y
       openai: 4.62.1
+      prisma: 5.19.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-markdown: 8.0.7_65qsg4t7vw5cpkala6zwu62pu4
@@ -989,6 +993,51 @@ packages:
 
   /@popperjs/core/2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
+
+  /@prisma/client/5.19.1_prisma@5.19.1:
+    resolution: {integrity: sha512-x30GFguInsgt+4z5I4WbkZP2CGpotJMUXy+Gl/aaUjHn2o1DnLYNTA+q9XdYmAQZM8fIIkvUiA2NpgosM3fneg==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.19.1
+    dev: false
+
+  /@prisma/debug/5.19.1:
+    resolution: {integrity: sha512-lAG6A6QnG2AskAukIEucYJZxxcSqKsMK74ZFVfCTOM/7UiyJQi48v6TQ47d6qKG3LbMslqOvnTX25dj/qvclGg==}
+    dev: false
+
+  /@prisma/engines-version/5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3:
+    resolution: {integrity: sha512-xR6rt+z5LnNqTP5BBc+8+ySgf4WNMimOKXRn6xfNRDSpHvbOEmd7+qAOmzCrddEc4Cp8nFC0txU14dstjH7FXA==}
+    dev: false
+
+  /@prisma/engines/5.19.1:
+    resolution: {integrity: sha512-kR/PoxZDrfUmbbXqqb8SlBBgCjvGaJYMCOe189PEYzq9rKqitQ2fvT/VJ8PDSe8tTNxhc2KzsCfCAL+Iwm/7Cg==}
+    requiresBuild: true
+    dependencies:
+      '@prisma/debug': 5.19.1
+      '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
+      '@prisma/fetch-engine': 5.19.1
+      '@prisma/get-platform': 5.19.1
+    dev: false
+
+  /@prisma/fetch-engine/5.19.1:
+    resolution: {integrity: sha512-pCq74rtlOVJfn4pLmdJj+eI4P7w2dugOnnTXpRilP/6n5b2aZiA4ulJlE0ddCbTPkfHmOL9BfaRgA8o+1rfdHw==}
+    dependencies:
+      '@prisma/debug': 5.19.1
+      '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
+      '@prisma/get-platform': 5.19.1
+    dev: false
+
+  /@prisma/get-platform/5.19.1:
+    resolution: {integrity: sha512-sCeoJ+7yt0UjnR+AXZL7vXlg5eNxaFOwC23h0KvW1YIXUoa7+W2ZcAUhoEQBmJTW4GrFqCuZ8YSP0mkDa4k3Zg==}
+    dependencies:
+      '@prisma/debug': 5.19.1
     dev: false
 
   /@radix-ui/number/1.1.0:
@@ -4702,6 +4751,17 @@ packages:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
       react-is: 18.3.1
+    dev: false
+
+  /prisma/5.19.1:
+    resolution: {integrity: sha512-c5K9MiDaa+VAAyh1OiYk76PXOme9s3E992D7kvvIOhCrNsBQfy2mP2QAQtX0WNj140IgG++12kwZpYB9iIydNQ==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 5.19.1
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: false
 
   /prop-types/15.8.1:
